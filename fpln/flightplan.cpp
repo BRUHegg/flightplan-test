@@ -318,6 +318,7 @@ namespace test
 
     void FlightPlan::add_direct(int leg, leg_list_node_t *next_leg)
     {
+        std::lock_guard<std::mutex> lock(fpl_mtx);
         if(fpl_refs[size_t(FPL_SEG_DEP_RWY)].ptr == nullptr)
             return;
         leg_list_node_t *prev_leg = next_leg->prev;
@@ -345,6 +346,7 @@ namespace test
 
     void FlightPlan::delete_leg(leg_list_node_t *leg)  // leg before/after discontinuity
     {
+        std::lock_guard<std::mutex> lock(fpl_mtx);
         leg_list_node_t *prev_leg = leg->prev;
         leg_list_node_t *next_leg = leg->next;
 

@@ -157,6 +157,10 @@ namespace test
 
         std::vector<std::string> get_arr_rwys();
 
+        bool set_dep_rwy(std::string& rwy);
+
+        std::string get_dep_rwy();
+
         void print_refs();
 
         /*
@@ -184,10 +188,6 @@ namespace test
 
         void delete_leg(leg_list_node_t *leg);
 
-        //bool set_dep_rwy(std::string& rwy);
-
-        //std::string get_dep_rwy();
-
         //str_set_map_t get_arr_appch();
 
         //bool set_arr_appch(std::string& proc_name, std::string& trans);
@@ -211,6 +211,8 @@ namespace test
         std::string cifp_dir_path;
 
         libnav::Airport *departure, *arrival;
+        
+        std::string arr_rwy;
 
         std::vector<fpl_ref_t> fpl_refs;
 
