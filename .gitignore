@@ -1,0 +1,5 @@
+build/
+.vscode/
+libnavtest
+777_arpt.dat
+777_rnw.dat
